@@ -16,7 +16,35 @@
 
   <body>
 
+  <div id="app">
 
+    <div class="sections-menu">
+      <span
+        class="menu-point"
+        v-bind:class="{active: activeSection == index}"
+        v-on:click="scrollToSection(index)"
+        v-for="(offset, index) in offsets"
+        v-bind:key="index">
+      </span>
+    </div>  <!-- menu -->
+
+    <section id="home" class="fullpage">
+      <h1>Home</h1>
+    </section> <!-- section home -->
+
+    <section id="about" class="fullpage">
+      <h1>About</h1>
+    </section> <!-- section about -->
+
+    <section id="work" class="fullpage">
+      <h1>Work</h1>
+    </section> <!-- section work -->
+
+    <section id="contact" class="fullpage">
+      <h1>Contact</h1>
+    </section> <!-- section contact -->
+
+  </div> <!-- #app -->
 
   <script src="/js/main.js"></script>
   </body>
