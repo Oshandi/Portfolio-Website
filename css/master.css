@@ -1,6 +1,6 @@
+/* General styles */
 body {
   margin: 0;
-  color: #FFF;
   font-family: Helvetica, arial, sans-serif;
   overflow: hidden;
 }
@@ -34,27 +34,189 @@ p {
   margin-left: 5px;
 }
 
+/* Hamburger menu styles */
+.topmenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.hamburger {
+  width: 40px;
+  height: 25px;
+  margin:35px 35px 0 0;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.hamburger span {
+  background: #fff;
+  display: block;
+  position: absolute;
+  left:0;
+  height: 3px;
+  width: 100%;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: all .25s cubic-bezier(0.22, 0.61, 0.36, 1);
+  -moz-transition: all .25s cubic-bezier(0.22, 0.61, 0.36, 1);
+  -o-transition: all .25s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: all .25s cubic-bezier(0.22, 0.61, 0.36, 1);
+  opacity: 1;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0px;
+}
+
+.hamburger span:nth-child(2) {
+  top: 12px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 24px;
+}
+
+.hamburger.open span:nth-child(1) {
+  top: 12px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+
+}
+
+.hamburger.open span:nth-child(3) {
+  top: 12px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.menu-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #5482ab;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 900;
+  text-align: center;
+  display: flex;
+  -webkit-transition: visibility 0.5s ease, opacity 1s ease;
+  -moz-transition: visibility 0.5s ease, opacity 1s ease;
+  -o-transition: visibility 0.5s ease, opacity 1s ease;
+  transition: visibility 0.5s ease, opacity 1s ease;
+}
+
+.menu-overlay.open {
+  opacity: 0.8;
+  visibility: visible;
+}
+
+.menu{
+  text-align:center;
+  width:30%;
+  margin:0 auto;
+  position:relative;
+  top:50%;
+}
+
+.nav {
+  list-style:none;
+  padding:0;
+  color:#fff;
+  display:block;
+  vertical-align: middle;
+}
+
+.nav li {
+  display: block;
+  margin: 20px 0;
+  opacity: 0;
+  -moz-transform: translateY(-40px);
+  -webkit-transform: translateY(-40px);
+  transform: translateY(-40px);
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.open .nav li {
+  -moz-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.open .nav li:nth-child(1) {
+  -webkit-transition-delay: 100ms;
+  transition-delay: 100ms;
+}
+
+.open .nav li:nth-child(2) {
+  -webkit-transition-delay: 200ms;
+  transition-delay: 200ms;
+}
+
+.open .nav li:nth-child(3) {
+  -webkit-transition-delay: 300ms;
+  transition-delay: 300ms;
+}
+
+.open .nav li:nth-child(4) {
+  -webkit-transition-delay: 400ms;
+  transition-delay: 400ms;
+}
+
+.open .nav li a {
+  display: block;
+  color: #fff;
+  font-size: 32px;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.open .nav li a:hover{
+  opacity: 0.6;
+}
+
+/* Section menu styles */
 .sections-menu {
   position: fixed;
-  right: 1rem;
+  right: 35px;
   top: 50%;
   transform: translateY(-50%);
 }
 
 .sections-menu .menu-point {
-  width: 8px;
-  height: 8px;
-  background-color: #FFF;
+  width: 12px;
+  height: 12px;
   display: block;
-  margin: 1rem 0;
-  opacity: .6;
-  transition: .4s ease all;
+  margin: 15px 0;
+  transition: all 0.4s ease;
   cursor: pointer;
+  background-color: #e3e3e3;
 }
 
 .sections-menu .menu-point.active {
-  opacity: 1;
-  transform: scale(1.5);
+  background-color:pink;
 }
 
 @media screen and (max-width: 1200px) {
@@ -63,18 +225,27 @@ p {
   }
 }
 
+/* Section home styles */
 #home {
-  background-color: pink;
+  background-color: #e66767;
+  color: #000;
+
 }
 
+/* Section about styles */
 #about {
-  background-color: green;
+  background-color: #000;
+  color: #e3e3e3;
 }
 
+/* Section work styles */
 #work {
-  background-color: pink;
+  background-color: #e66767;
+  color: #000;
 }
 
+/* Section contact styles */
 #contact {
-  background-color: blue;
+  background-color: #000;
+  color: #e3e3e3;
 }

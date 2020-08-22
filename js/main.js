@@ -1,12 +1,16 @@
 var app = new Vue({
   el: '#app',
   data: {
+    isMobileMenuOpen: false,
     inMove: false,
     activeSection: 0,
     offsets: [],
     touchStartY: 0
   },
   methods: {
+    showMobileMenu: function() {
+      this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    },
     calculateSectionOffsets() {
       let sections = document.getElementsByTagName('section');
       let length = sections.length;
@@ -64,7 +68,6 @@ var app = new Vue({
       setTimeout(() => {
         this.inMove = false;
       }, 400);
-
     },
     touchStart(e) {
       e.preventDefault();
@@ -87,6 +90,12 @@ var app = new Vue({
       return false;
     }
   },
+  /*computed:{
+    compMenuClasses: function() {
+      active: this.activeSection == this.offsets.index,
+      menu-black: this.menuBlack
+    }
+  }*/
   created() {
     this.calculateSectionOffsets();
 

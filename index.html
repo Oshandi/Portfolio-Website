@@ -17,6 +17,49 @@
   <body>
 
   <div id="app">
+    <header id="header" class="header">
+      <!--<div class="topmenu">
+        <div id="nav-icon"
+        v-bind:class="{open: isMobileMenuOpen}"
+        @click="showMobileMenu()">
+      		<span></span>
+      		<span></span>
+      		<span></span>
+      	</div>
+      </div>
+
+      <div class="menu-overlay"
+      v-bind:class="{open: isMobileMenuOpen}"
+      v-if="isMobileMenuOpen">
+        <div class="menu">
+      		<ul>
+      			<li>Company Vision</li>
+      			<li>Investor Relations</li>
+      			<li>Alliance Partners</li>
+      			<li>Yolo</li>
+      		</ul>
+      	</div>
+      </div> -->
+      <div class="topmenu">
+        <div class="hamburger"
+        v-bind:class="{open: isMobileMenuOpen}"
+        v-on:click="showMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="menu-overlay" v-bind:class="{open: isMobileMenuOpen}">
+        <div class="menu">
+        <ul class="nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Reach Us</a></li>
+        </ul>
+      </div>
+      </div>
+    </header>
 
     <div class="sections-menu">
       <span
@@ -26,23 +69,25 @@
         v-for="(offset, index) in offsets"
         v-bind:key="index">
       </span>
-    </div>  <!-- menu -->
+    </div>  <!-- sections-menu -->
 
-    <section id="home" class="fullpage">
+    <section id="home" ref="home" class="fullpage">
       <h1>Home</h1>
+      <p><a href="#contact" @click.prevent="scrollToSection()">scroll bottom</a></p>
     </section> <!-- section home -->
 
-    <section id="about" class="fullpage">
+    <section id="about" ref="about" class="fullpage">
       <h1>About</h1>
     </section> <!-- section about -->
 
-    <section id="work" class="fullpage">
+    <section id="work" ref="work" class="fullpage">
       <h1>Work</h1>
     </section> <!-- section work -->
 
-    <section id="contact" class="fullpage">
+    <section id="contact" ref="contact" class="fullpage">
       <h1>Contact</h1>
     </section> <!-- section contact -->
+
 
   </div> <!-- #app -->
 
