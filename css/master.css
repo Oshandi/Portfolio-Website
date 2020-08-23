@@ -213,7 +213,7 @@ a {
   width: 100%;
   height: 100%;
   background: #e66767;
-  z-index: 99;
+  z-index: 1000;
   transition: all .4s cubic-bezier(0.7, 0, 0.3, 1);
 }
 
@@ -238,7 +238,6 @@ a {
   left: 0%;
 }
 
-
 /* Section menu styles */
 .sections-menu {
   position: fixed;
@@ -262,10 +261,54 @@ a {
   border: 1.5px double;
 }
 
-@media screen and (max-width: 1200px) {
-  h1 {
-    font-size: 2.5em;
-  }
+/* Brand or logo */
+.brand-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.brand {
+  position: relative;
+  display: inline-block;
+  font-family: 'Emblema One', cursive;
+  font-size: 32px;
+  padding: 0;
+  margin : 20px 0 0 35px;
+}
+
+/* Page Title Container */
+.page-title-container {
+  position: fixed;
+  bottom: 45vh;
+  left: 0;
+}
+
+.page-title {
+  position: relative;
+  display: inline-block;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 18px;
+  padding: 0;
+  margin-left: 35px;
+  transform: rotateZ(-90deg);
+}
+
+/* Page Numbers */
+.page-no-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.page-no {
+  position: relative;
+  display: inline-block;
+  font-weight: 900;
+  font-size: 32px;
+  padding: 0;
+  margin : 0 0 20px 35px;
 }
 
 /* Section home styles */
@@ -291,4 +334,11 @@ a {
 #contact {
   background-color: #000;
   color: #e3e3e3;
+}
+
+/* Media queries */
+@media screen and (max-width: 1200px) {
+  h1 {
+    font-size: 2.5em;
+  }
 }

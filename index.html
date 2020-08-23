@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Emblema+One&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,900&family=Unica+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/master.css">
 
@@ -19,6 +19,11 @@
 
   <div id="app">
     <header id="header" class="header">
+
+      <div class="brand-container">
+        <span class="brand">pd.</span>
+      </div> <!-- .brand -->
+
       <div class="topmenu">
         <div class="hamburger"
         v-bind:class="{open: isMobileMenuOpen}"
@@ -27,9 +32,9 @@
           <span></span>
           <span></span>
         </div>
-      </div>
+      </div>  <!-- .topmenu -->
+
       <div class="menu-overlay" v-bind:class="{open: isMobileMenuOpen}">
-        <div class="menu">
         <ul class="nav">
           <li><a href="#home" @click.prevent="scrollToSection(0)">
             Home
@@ -43,9 +48,8 @@
           <li><a href="#contact" @click.prevent="scrollToSection(3)">
             Contact
           </a></li>
-        </ul>
-      </div>
-      </div>
+        </ul>  <!-- .nav -->
+      </div>  <!-- .menu-overlay -->
     </header>
 
     <div class="sections-menu">
@@ -57,6 +61,14 @@
         v-bind:key="index">
       </span>
     </div>  <!-- sections-menu -->
+
+    <div class="page-title-container">
+    <span class="page-title">home</span>
+    </div>
+
+    <div class="page-no-container">
+      <span class="page-no">01</span>
+    </div> <!-- page numbers -->
 
     <section id="home" ref="home" class="fullpage">
       <h1>Home</h1>
