@@ -5,10 +5,11 @@ var app = new Vue({
     inMove: false,
     activeSection: 0,
     offsets: [],
-    touchStartY: 0
+    touchStartY: 0,
+    activeColor:''
   },
   methods: {
-    showMobileMenu: function() {
+    showMobileMenu: function () {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
     },
     calculateSectionOffsets() {
@@ -63,6 +64,9 @@ var app = new Vue({
       this.activeSection = id;
       this.inMove = true;
 
+      //modify colors
+      this.updateColors();
+
       document.getElementsByTagName('section')[id].scrollIntoView({behavior: 'smooth'});
 
       setTimeout(() => {
@@ -88,14 +92,18 @@ var app = new Vue({
 
       this.touchStartY = 0;
       return false;
-    }
+    },
+    updateColors: function () {
+      if ((this.activeSection == '0') || (this.activeSection == '2')) {
+        this.activeColor = '#000';
+      }else if ((this.activeSection == '1') || (this.activeSection == '3')) {
+        this.activeColor = '#e3e3e3';
+      }
+    },
+    /*test: function () {
+
+    }*/
   },
-  /*computed:{
-    compMenuClasses: function() {
-      active: this.activeSection == this.offsets.index,
-      menu-black: this.menuBlack
-    }
-  }*/
   created() {
     this.calculateSectionOffsets();
 

@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/master.css">
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <!-- VUE, JS, Popper.js, and jQuery -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <title>Piyumi Dissanayake</title>
   </head>
@@ -21,16 +24,19 @@
     <header id="header" class="header">
 
       <div class="brand-container">
-        <span class="brand">pd.</span>
+        <span class="brand"
+        v-bind:style="{color: activeColor}">
+          pd.
+        </span>
       </div> <!-- .brand -->
 
       <div class="topmenu">
         <div class="hamburger"
         v-bind:class="{open: isMobileMenuOpen}"
         v-on:click="showMobileMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span v-bind:style="{background: activeColor}"></span>
+          <span v-bind:style="{background: activeColor}"></span>
+          <span v-bind:style="{background: activeColor}"></span>
         </div>
       </div>  <!-- .topmenu -->
 
@@ -56,18 +62,25 @@
       <span
         class="menu-point"
         v-bind:class="{active: activeSection == index}"
-        v-on:click="scrollToSection(index)"
+        v-on:click="scrollToSection(index), test()"
         v-for="(offset, index) in offsets"
-        v-bind:key="index">
+        v-bind:key="index"
+        v-bind:style="{background: activeColor}">
       </span>
     </div>  <!-- sections-menu -->
 
     <div class="page-title-container">
-    <span class="page-title">home</span>
-    </div>
+      <span class="page-title"
+      v-bind:style="{color: activeColor}">
+        home
+      </span>
+    </div> <!-- page title -->
 
     <div class="page-no-container">
-      <span class="page-no">01</span>
+      <span class="page-no"
+      v-bind:style="{color: activeColor}">
+        0{{activeSection+1}}
+      </span>
     </div> <!-- page numbers -->
 
     <section id="home" ref="home" class="fullpage">

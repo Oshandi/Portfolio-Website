@@ -37,7 +37,7 @@ a {
   text-decoration: none;
   font-weight: 600;
   padding: 5px 10px;
-  color: #FFF;
+  color: #e3e3e3;
 }
 
 /* Hamburger menu styles */
@@ -59,7 +59,7 @@ a {
 }
 
 .hamburger span {
-  background: #fff;
+  background-color: #000;
   display: block;
   position: absolute;
   left:0;
@@ -141,7 +141,7 @@ a {
   flex-direction: column;
   text-align: center;
   list-style:none;
-  color:#fff;
+  color:#e3e3e3;
   vertical-align: middle;
 }
 
@@ -187,8 +187,8 @@ a {
 .open .nav li a {
   position: relative;
   overflow: hidden;
-  color: #fff;
   font-size: 32px;
+  color: #e3e3e3;
   text-decoration: none;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -253,12 +253,7 @@ a {
   margin: 15px 0;
   transition: all 0.4s ease;
   cursor: pointer;
-  background-color: #e3e3e3;
-}
-
-.sections-menu .menu-point.active {
-  background-color:#e15f41;
-  border: 1.5px double;
+  background-color: #000;
 }
 
 /* Brand or logo */
@@ -309,6 +304,11 @@ a {
   font-size: 32px;
   padding: 0;
   margin : 0 0 20px 35px;
+}
+
+/*  Update colors */
+.brand, .page-title, .page-no {
+  color: #000;
 }
 
 /* Section home styles */
