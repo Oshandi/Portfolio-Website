@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="/css/master.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/master.css">
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -18,28 +19,6 @@
 
   <div id="app">
     <header id="header" class="header">
-      <!--<div class="topmenu">
-        <div id="nav-icon"
-        v-bind:class="{open: isMobileMenuOpen}"
-        @click="showMobileMenu()">
-      		<span></span>
-      		<span></span>
-      		<span></span>
-      	</div>
-      </div>
-
-      <div class="menu-overlay"
-      v-bind:class="{open: isMobileMenuOpen}"
-      v-if="isMobileMenuOpen">
-        <div class="menu">
-      		<ul>
-      			<li>Company Vision</li>
-      			<li>Investor Relations</li>
-      			<li>Alliance Partners</li>
-      			<li>Yolo</li>
-      		</ul>
-      	</div>
-      </div> -->
       <div class="topmenu">
         <div class="hamburger"
         v-bind:class="{open: isMobileMenuOpen}"
@@ -52,10 +31,18 @@
       <div class="menu-overlay" v-bind:class="{open: isMobileMenuOpen}">
         <div class="menu">
         <ul class="nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Reach Us</a></li>
+          <li><a href="#home" @click.prevent="scrollToSection(0)">
+            Home
+          </a></li>
+          <li><a href="#about" @click.prevent="scrollToSection(1)">
+            About
+          </a></li>
+          <li><a href="#work" @click.prevent="scrollToSection(2)">
+            Works
+          </a></li>
+          <li><a href="#contact" @click.prevent="scrollToSection(3)">
+            Contact
+          </a></li>
         </ul>
       </div>
       </div>
@@ -73,7 +60,6 @@
 
     <section id="home" ref="home" class="fullpage">
       <h1>Home</h1>
-      <p><a href="#contact" @click.prevent="scrollToSection()">scroll bottom</a></p>
     </section> <!-- section home -->
 
     <section id="about" ref="about" class="fullpage">
