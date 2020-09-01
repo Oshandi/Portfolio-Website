@@ -18,15 +18,22 @@ body {
 
 .fullpage {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.main-container {
+  height:100vh;
+  width: 100vw;
+  padding: 2em;
 }
 
 h1 {
-  font-size: 6em;
+  font-size: 5em;
   margin: 0;
   text-align: center;
   padding: 0 1rem;
@@ -90,6 +97,7 @@ a {
 
 .hamburger.open span:nth-child(1) {
   top: 12px;
+  background-color: #e66767 important!;
   -webkit-transform: rotate(135deg);
   -moz-transform: rotate(135deg);
   -o-transform: rotate(135deg);
@@ -104,6 +112,7 @@ a {
 
 .hamburger.open span:nth-child(3) {
   top: 12px;
+  background-color: #e66767 important!;
   -webkit-transform: rotate(-135deg);
   -moz-transform: rotate(-135deg);
   -o-transform: rotate(-135deg);
@@ -315,30 +324,208 @@ a {
 #home {
   background-color: #e66767;
   color: #000;
-
 }
+/* Section home styles - END */
 
 /* Section about styles */
 #about {
   background-color: #000;
   color: #e3e3e3;
 }
+/* Section about styles - END */
 
-/* Section work styles */
+/* Section work styles - START */
 #work {
   background-color: #e66767;
   color: #000;
 }
+.heading-container-s3 {
+  width:70vw;
+  height:110px;
+}
+
+.heading-s3 {
+  margin-left:10%;
+  width: 35%;
+  height:100%;
+  background-color: #000;
+}
+
+.heading-s3 h1 {
+
+  color:#e3e3e3;
+}
+
+/* Slider styles */
+
+#slider {
+}
+
+#slider .item {
+  display: flex;
+  width:70vw;
+  height: 70vh;
+  background-color: #e3e3e3;
+}
+
+@media only screen and (max-width: 992px) {
+  #slider .item {
+  display: block;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  #slider .item {
+  width: 1500px;
+  }
+}
+
+#slider .part {
+  position: relative;
+  -webkit-flex: 1 0 0;
+  flex: 1 0 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 1199px) {
+    #slider .part {
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+    #slider .part {
+      height: 100%;
+  }
+}
+
+#slider .part .image {
+  order: 2 important!;
+  cursor: pointer;
+}
+
+#slider .image-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#slider .image-slider img  {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  max-width: 101%;
+}
+
+#slider .part .text {
+  order:1 !important;
+}
+
+#slider .inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  background-color: #c4c4c4;
+}
+
+#slider .sub-title {
+  position: absolute;
+  top: 30px;
+  left: 10%;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+#slider .centered {
+  margin: 0 auto;
+  width: 80%;
+  font-family: 'Fira Code', monospace;
+}
+
+#slider .centered h2 {
+  font-size: 36px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+#slider .centered h3 {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+#slider .centered h5 {
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+#slider .centered h6 {
+  padding-top: 1.5em;
+  color: #e66767;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#slider .centered button {
+  width: 55px;
+  height: 55px;
+  margin-top: 1.5em;
+  color: #e3e3e3;
+  cursor: pointer;
+  background-color: #e66767;
+  border: 0;
+  border-radius: 50%;
+  outline: none;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .15);
+  -moz-box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .15);
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .15);
+}
+
+#slider .paginator {
+  position: absolute;
+  bottom: 30px;
+  left: 10%;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+/* Section work styles - END */
+
 
 /* Section contact styles */
 #contact {
   background-color: #000;
   color: #e3e3e3;
 }
+/* Section contact styles - END */
 
-/* Media queries */
-@media screen and (max-width: 1200px) {
+/* Media queries
+@media only screen and (max-width: 1000px) {
   h1 {
-    font-size: 2.5em;
+
+  }
+
+  .item {
+    display: block;
+  }
+
+  .part {
+    height:400px;
   }
 }
+
+@media only screen and (min-width: 1600px) {
+
+
+}*/

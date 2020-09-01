@@ -1,3 +1,176 @@
+//Vue component created for image of the slider
+Vue.component('image-slide', {
+  template: `
+<transition
+  v-bind:css="false"
+  name="image-slide"
+  mode="in-out"
+  @enter="enter"
+  @leave="leave"
+>
+  <slot></slot>
+</transition>
+`,
+  data: () => ({
+    anim: null
+  }),
+  methods: {
+    enter (el, onComplete) {
+      // console.log('Enter')
+      onComplete()
+      this.anim = anime({
+        targets: el,
+        translateY: ['100%', 0],
+        easing: 'easeOutCubic',
+        duration: 600,
+        delay: 600
+      })
+      // this.anim.play
+      // this.isImageLoaded (el.getAttribute('src'))
+    },
+
+    leave (el, onComplete) {
+      anime({
+        targets: el,
+        translateY: [0, '-100%'],
+        easing: 'easeOutSine',
+        duration: 600,
+        delay: 700,
+        complete: onComplete
+      })
+    },
+
+    isImageLoaded (src) {
+      this.isLoaded = false
+      var img = new Image()
+      img.onload = () => {
+        // the image is ready
+        this.isLoaded = true
+        // console.log('loaded')
+        // this.anim.play
+      }
+      img.onerror = function () {
+        // the image has failed
+      }
+      img.src = src
+    }
+  }
+});
+
+//Vue component created for text section of the slider
+Vue.component('text-slide', {
+  template: `
+<transition
+  :css="false"
+  name="text-slide"
+  mode="out-in"
+  @enter="enter"
+  @leave="leave"
+>
+  <slot></slot>
+</transition>
+`,
+  data: () => ({
+    anim: null
+  }),
+  methods: {
+    enter (el, onComplete) {
+      console.log('ENTER')
+      let timeline = anime.timeline({ complete: onComplete })
+      timeline.add({
+        targets: [
+          '.centered h1',
+          '.centered h3',
+          '.centered h6',
+          '.centered h5',
+          '.centered button'
+        ],
+        translateY: [250, 0],
+        easing: 'easeOutSine',
+        duration: 500,
+        opacity: [0, 1],
+        delay: (el, i, l) => i * 100
+      })
+      timeline.add({
+        targets: '.paginator',
+        translateX: [-50, 0],
+        easing: 'easeOutSine',
+        duration: 300,
+        opacity: [0, 1],
+        offset: 0
+      })
+      timeline.add({
+        targets: '.social',
+        translateY: [30, 0],
+        easing: 'easeOutSine',
+        duration: 300,
+        opacity: [0, 1],
+        offset: 0
+      })
+
+      const socialObj = { like: 0, visit: 0, comment: 0 }
+      const elLike = document.querySelector('[data-like]')
+      const elVisit = document.querySelector('[data-visit]')
+      const elComment = document.querySelector('[data-comment]')
+      timeline.add({
+        targets: socialObj,
+        like: elLike.dataset.like,
+        visit: elVisit.dataset.visit,
+        comment: elComment.dataset.comment,
+        round: 1,
+        duration: 900,
+        easing: 'easeInQuad',
+        offset: -50,
+        update: function () {
+          elLike.innerHTML = socialObj.like
+          elVisit.innerHTML = socialObj.visit
+          elComment.innerHTML = socialObj.comment
+        }
+      })
+    },
+
+    leave (el, onComplete) {
+      console.log('LEAVE')
+
+      let timeline = anime.timeline({
+        complete: onComplete
+      })
+
+      timeline.add({
+        targets: [
+          '.part.text h1',
+          '.part.text h3',
+          '.centered h6',
+          '.centered h5',
+          '.centered button'
+        ],
+        translateY: [0, -250],
+        easing: 'easeInExpo',
+        duration: 500,
+        opacity: [1, 0],
+        delay: (el, i, l) => i * 100
+      })
+      timeline.add({
+        targets: '.paginator',
+        translateX: [0, 120],
+        easing: 'easeInExpo',
+        duration: 300,
+        opacity: [1, 0],
+        offset: 0
+      })
+      timeline.add({
+        targets: '.social',
+        translateY: [0, -80],
+        easing: 'easeInExpo',
+        duration: 300,
+        opacity: [1, 0],
+        offset: 0
+      })
+    }
+  }
+});
+
+//Main Vue instance of the page
 var app = new Vue({
   el: '#app',
   data: {
@@ -9,9 +182,11 @@ var app = new Vue({
     activeColor:''
   },
   methods: {
+    //hamburger menu functionality
     showMobileMenu: function () {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
     },
+    //calculate offsets to implement scroll
     calculateSectionOffsets() {
       let sections = document.getElementsByTagName('section');
       let length = sections.length;
@@ -21,6 +196,7 @@ var app = new Vue({
         this.offsets.push(sectionOffset);
       }
     },
+    //handle mouse wheel even on scroll
     handleMouseWheel: function(e) {
 
       if (e.wheelDelta < 30 && !this.inMove) {
@@ -58,6 +234,7 @@ var app = new Vue({
 
       this.scrollToSection(this.activeSection, true);
     },
+    //scroll to the selected section
     scrollToSection(id, force = false) {
       if(this.inMove && !force) return false;
 
@@ -93,6 +270,7 @@ var app = new Vue({
       this.touchStartY = 0;
       return false;
     },
+    //method implemented to change fixed menu colors on scroll
     updateColors: function () {
       if ((this.activeSection == '0') || (this.activeSection == '2')) {
         this.activeColor = '#000';
@@ -104,6 +282,7 @@ var app = new Vue({
 
     }*/
   },
+  //methods to be called on DOM creation
   created() {
     this.calculateSectionOffsets();
 

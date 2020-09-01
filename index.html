@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Emblema+One&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,900&family=Unica+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/master.css">
 
-    <!-- VUE, JS, Popper.js, and jQuery -->
+    <!-- VUE, PortalVue, Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="http://unpkg.com/vue/dist/vue.js"></script>
+    <script src="http://unpkg.com/portal-vue"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <title>Piyumi Dissanayake</title>
   </head>
@@ -62,7 +67,7 @@
       <span
         class="menu-point"
         v-bind:class="{active: activeSection == index}"
-        v-on:click="scrollToSection(index), test()"
+        v-on:click="scrollToSection(index)"
         v-for="(offset, index) in offsets"
         v-bind:key="index"
         v-bind:style="{background: activeColor}">
@@ -83,16 +88,60 @@
       </span>
     </div> <!-- page numbers -->
 
-    <section id="home" ref="home" class="fullpage">
+    <section id="home" ref="home" class="fullpage"> <!-- HOME -->
       <h1>Home</h1>
     </section> <!-- section home -->
 
-    <section id="about" ref="about" class="fullpage">
+    <section id="about" ref="about" class="fullpage"> <!-- ABOUT -->
       <h1>About</h1>
     </section> <!-- section about -->
 
-    <section id="work" ref="work" class="fullpage">
-      <h1>Work</h1>
+    <section id="work" ref="work" class="fullpage"> <!-- PORTFOLIO -->
+
+    <div id="slider">
+    <div class="item">
+
+      <div class="part image">
+        <image-slide>
+          <div class="image-slide">
+
+          </div>
+        </image-slide>
+      </div> <!-- .part .image -->
+
+          <div class="part text">
+            <text-slide>
+              <div class="inner">
+                <div class="sub-title">
+                  Portfolio
+                </div>  <!-- .sub-title -->
+
+                <div class="centered">
+                  <h2>activeItem.title</h2>
+                  <h3>activeItem.description</h3>
+                  <h6>activeItem.creditTitle</h6>
+                  <h5>activeItem.credit</h5>
+                  <button><i class="fa fa-play"></i></button>
+                </div> <!-- .centered -->
+
+                <div class="paginator">
+                  01
+                </div> <!-- .paginator -->
+
+              </div> <!-- .inner -->
+            </text-slide>
+          </div> <!-- .part .text -->
+
+      </div> <!-- .item -->
+      </div>  <!-- slider -->
+
+      <div class="heading-container-s3">
+      <div class="heading-s3">
+        <h1>Work</h1>
+      </div> <!-- .heading-s3 -->
+    </div> <!-- .heading-container-s3 -->
+
+
     </section> <!-- section work -->
 
     <section id="contact" ref="contact" class="fullpage">
