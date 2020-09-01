@@ -99,34 +99,6 @@ Vue.component('text-slide', {
         opacity: [0, 1],
         offset: 0
       })
-      timeline.add({
-        targets: '.social',
-        translateY: [30, 0],
-        easing: 'easeOutSine',
-        duration: 300,
-        opacity: [0, 1],
-        offset: 0
-      })
-
-      const socialObj = { like: 0, visit: 0, comment: 0 }
-      const elLike = document.querySelector('[data-like]')
-      const elVisit = document.querySelector('[data-visit]')
-      const elComment = document.querySelector('[data-comment]')
-      timeline.add({
-        targets: socialObj,
-        like: elLike.dataset.like,
-        visit: elVisit.dataset.visit,
-        comment: elComment.dataset.comment,
-        round: 1,
-        duration: 900,
-        easing: 'easeInQuad',
-        offset: -50,
-        update: function () {
-          elLike.innerHTML = socialObj.like
-          elVisit.innerHTML = socialObj.visit
-          elComment.innerHTML = socialObj.comment
-        }
-      })
     },
 
     leave (el, onComplete) {
@@ -158,14 +130,6 @@ Vue.component('text-slide', {
         opacity: [1, 0],
         offset: 0
       })
-      timeline.add({
-        targets: '.social',
-        translateY: [0, -80],
-        easing: 'easeInExpo',
-        duration: 300,
-        opacity: [1, 0],
-        offset: 0
-      })
     }
   }
 });
@@ -179,9 +143,68 @@ var app = new Vue({
     activeSection: 0,
     offsets: [],
     touchStartY: 0,
-    activeColor:''
+    activeColor:'',
+    activeSlide: 0,
+    slides: [
+      {
+        title: 'HyperX portfolio website',
+        description: 'Lorem ipsum dolor sit amet, consectetur',
+        miniTitle: 'Technologies :',
+        technology: 'html, bootstrap, jquery, php',
+        image: 'https://unsplash.it/700?image=10',
+        color: '#e66767'
+      },
+      {
+        title: 'Photography website',
+        description: 'Lorem ipsum dolor sit amet, consectetur',
+        miniTitle: 'Technologies :',
+        technology: 'html, bootstrap, jquery, php',
+        image: 'https://unsplash.it/700?image=11',
+        color: '#000'
+      },
+      {
+        title: 'Ongoing project',
+        description: 'Lorem ipsum dolor sit amet, consectetur',
+        miniTitle: 'Technologies :',
+        technology: 'html, bootstrap, jquery, php',
+        image: 'https://unsplash.it/700?image=12',
+        color: '#e66767'
+      }
+    ]
+  },
+  computed: {
+      //portfolio slider - change image when moving onto next slide
+      slideImage () {
+        console.log(this.activeSlide)
+        return {
+          backgroundImage: `url("${this.slides[this.activeSlide].image}")`
+        }
+      },
+      //portfolio slider - return active slide
+      activeItem () {
+        return this.slides[this.activeSlide]
+      },
+      //portfolio slider - update button and miniTitle colors
+      buttonColor () {
+        return {
+          backgroundColor: this.slides[this.activeSlide].color
+        }
+      },
+      descriptionColor () {
+        return {
+          color: this.slides[this.activeSlide].color
+        }
+      }
   },
   methods: {
+    //portfolio slider - display next project slide
+    nextSlide () {
+      if (this.activeSlide >= this.slides.length - 1) {
+        this.activeSlide = 0
+      } else {
+        this.activeSlide++
+      }
+    },
     //hamburger menu functionality
     showMobileMenu: function () {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
