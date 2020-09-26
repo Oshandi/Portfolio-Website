@@ -79,7 +79,7 @@ Vue.component('text-slide', {
       let timeline = anime.timeline({ complete: onComplete })
       timeline.add({
         targets: [
-          '.centered h1',
+          '.centered h2',
           '.centered h3',
           '.centered h6',
           '.centered h5',
@@ -110,7 +110,7 @@ Vue.component('text-slide', {
 
       timeline.add({
         targets: [
-          '.part.text h1',
+          '.part.text h2',
           '.part.text h3',
           '.centered h6',
           '.centered h5',
@@ -159,7 +159,7 @@ var app = new Vue({
         description: 'Lorem ipsum dolor sit amet, consectetur',
         miniTitle: 'Technologies :',
         technology: 'html, bootstrap, jquery, php',
-        image: 'https://unsplash.it/700?image=11',
+        image: '../img/1.png',
         color: '#000'
       },
       {
@@ -167,22 +167,22 @@ var app = new Vue({
         description: 'Lorem ipsum dolor sit amet, consectetur',
         miniTitle: 'Technologies :',
         technology: 'html, bootstrap, jquery, php',
-        image: 'https://unsplash.it/700?image=12',
+        image: 'https://unsplash.it/700?image=10',
         color: '#e66767'
       }
     ]
   },
   computed: {
+      //portfolio slider - return active slide
+      activeItem () {
+        return this.slides[this.activeSlide];
+      },
       //portfolio slider - change image when moving onto next slide
       slideImage () {
-        console.log(this.activeSlide)
+        console.log(this.activeSlide);
         return {
           backgroundImage: `url("${this.slides[this.activeSlide].image}")`
         }
-      },
-      //portfolio slider - return active slide
-      activeItem () {
-        return this.slides[this.activeSlide]
       },
       //portfolio slider - update button and miniTitle colors
       buttonColor () {
@@ -200,9 +200,9 @@ var app = new Vue({
     //portfolio slider - display next project slide
     nextSlide () {
       if (this.activeSlide >= this.slides.length - 1) {
-        this.activeSlide = 0
+        this.activeSlide = 0;
       } else {
-        this.activeSlide++
+        this.activeSlide++;
       }
     },
     //hamburger menu functionality

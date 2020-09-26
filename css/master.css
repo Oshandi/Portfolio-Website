@@ -418,7 +418,7 @@ a {
   background-size: cover;
 }
 
-#slider .image-slider img  {
+#slider img  {
   position: absolute;
   top: 0;
   left: 0;
@@ -443,7 +443,7 @@ a {
 #slider .sub-title {
   position: absolute;
   top: 20px;
-  left: 10%;
+  left: 5%;
   font-size: 18px;
   font-weight: 600;
 }
@@ -461,6 +461,7 @@ a {
 }
 
 #slider .centered h3 {
+  padding-top: 0.5em;
   font-size: 18px;
   font-weight: 400;
 }
@@ -496,7 +497,7 @@ a {
 #slider .paginator {
   position: absolute;
   bottom: 20px;
-  left: 10%;
+  left: 5%;
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;

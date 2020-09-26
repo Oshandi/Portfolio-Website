@@ -16,7 +16,6 @@
 
     <!-- VUE, PortalVue, Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="http://unpkg.com/vue/dist/vue.js"></script>
     <script src="http://unpkg.com/portal-vue"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="/js/anime.min.js"></script>
@@ -105,11 +104,12 @@
       <div class="part image"
       v-on:click="nextSlide">
         <image-slide>
-          <div class="image-slide"
+          <div class="image-slider"
           v-bind:style="slideImage"
           v-bind:key="activeSlide"></div>
         </image-slide>
-      </div> <!-- .part .image -->
+      </div>
+      <!-- .part .image -->
 
           <div class="part text">
             <text-slide>
