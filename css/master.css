@@ -266,6 +266,7 @@ a {
   right: 35px;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 100;
 }
 
 .sections-menu .menu-point {
@@ -362,7 +363,7 @@ a {
   background-repeat: no-repeat;
   display: inline-block;
   padding: 20px;
-  margin: auto 1%;
+  margin: 1% auto;
   max-width: 95%;
   padding: 6em;
   position: relative;
@@ -449,8 +450,6 @@ a {
     width: 150px;
   }
 }
-
-
 /* Section home styles - END */
 
 /* Section about styles */
@@ -458,6 +457,131 @@ a {
   background-color: #000;
   color: #e3e3e3;
 }
+
+#about .content {
+  background-image: url('../img/overlay2.png');
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin: 1% auto;
+  width: 100%;
+  padding: 6em;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#about h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+#about .statement {
+  margin: 0 5% 0 10%;
+  width: 30%;
+  color:#000;
+  font-family: 'Fira Code', monospace;
+  font-weight: 200;
+}
+
+#about .card-img-top {
+  max-height: 350px;
+}
+
+#about .card-body {
+  background: #c3c3c3;
+}
+
+#about .btn-primary {
+  background: #e66767;
+  border-radius: 0;
+  border: none;
+  text-transform: capitalize;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+}
+
+#about .background {
+  margin: 0 10% 0 5%;
+  width: 40%;
+}
+
+#timeline-content {
+  text-align: center;
+}
+
+.timeline {
+  border-left: 4px solid #e3e3e3;
+  background: #e66767;
+  color: #e3e3e3;
+  margin: 50px auto;
+  letter-spacing: 0.5px;
+  position: relative;
+  line-height: 1.4em;
+  font-size: 1.03em;
+  padding: 50px;
+  list-style: none;
+  text-align: left;
+  max-width: 100%;
+}
+
+.timeline h2,
+.timeline h3 {
+  color: #000;
+  font-size: 20px;
+  font-family: 'Fira Code', monospace;
+  font-weight: 500;
+}
+
+.timeline p {
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-family: 'Fira Code', monospace;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.timeline .event {
+  border-bottom: 1px solid  #c3c3c3;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.timeline .event:last-of-type {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border: none;
+}
+
+.timeline .event:before,
+.timeline .event:after {
+  position: absolute;
+  display: block;
+  top: 0;
+}
+
+.timeline .event:before {
+  left: -217.5px;
+  content: attr(data-date);
+  color: #c3c3c3;
+  text-align: right;
+  font-weight: 100;
+  font-size: 0.9em;
+  width: 120px;
+}
+
+.timeline .event:after {
+  box-shadow: 0 0 0 4px #e3e3e3;
+  left: -57.85px;
+  background: #e66767;
+  border-radius: 50%;
+  height: 11px;
+  width: 11px;
+  content: "";
+  top: 5px;
+}
+
+
 /* Section about styles - END */
 
 /* Section work styles - START */
