@@ -301,9 +301,10 @@ var app = new Vue({
         this.activeColor = '#e3e3e3';
       }
     },
-    /*test: function () {
+    /*
+    test: function () {
 
-    }*/
+    }, */
   },
   //methods to be called on DOM creation
   created() {
@@ -314,6 +315,9 @@ var app = new Vue({
 
     window.addEventListener('touchstart', this.touchStart, { passive: false }); // mobile devices
     window.addEventListener('touchmove', this.touchMove, { passive: false }); // mobile devices
+  },
+  mounted() {
+
   },
   destroyed() {
     window.removeEventListener('DOMMouseScroll', this.handleMouseWheelDOM); // Mozilla Firefox
