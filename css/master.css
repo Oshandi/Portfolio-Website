@@ -47,6 +47,11 @@ a {
   color: #e3e3e3;
 }
 
+.mf-0 {  margin: 0; }
+.mf-1 {  margin: 15px; }
+
+.pf-0 { padding: 0; }
+.pf-1 { padding: 15px; }
 /* Hamburger menu styles */
 
 .topmenu {
@@ -59,7 +64,7 @@ a {
 .hamburger {
   width: 40px;
   height: 25px;
-  margin:35px 35px 0 0;
+  margin:35px;
   position: relative;
   cursor: pointer;
   display: inline-block;
@@ -247,6 +252,13 @@ a {
   left: 0%;
 }
 
+@media only screen and (max-width: 600px) {
+  .hamburger {
+    width: 35px;
+    height: 20px;
+  }
+}
+
 /* Section menu styles */
 .sections-menu {
   position: fixed;
@@ -259,10 +271,16 @@ a {
   width: 12px;
   height: 12px;
   display: block;
-  margin: 15px 0;
+  margin: 15px;
   transition: all 0.4s ease;
   cursor: pointer;
   background-color: #000;
+}
+
+@media only screen and (max-width: 600px) {
+  .sections-menu {
+    display: none;
+  }
 }
 
 /* Brand or logo */
@@ -278,7 +296,7 @@ a {
   font-family: 'Emblema One', cursive;
   font-size: 32px;
   padding: 0;
-  margin : 20px 0 0 35px;
+  margin : 20px 35px;
 }
 
 /* Page Title Container */
@@ -295,8 +313,14 @@ a {
   font-style: italic;
   font-size: 18px;
   padding: 0;
-  margin-left: 35px;
+  margin: 35px;
   transform: rotateZ(-90deg);
+}
+
+@media only screen and (max-width: 600px) {
+  .page-title {
+    display: none;
+  }
 }
 
 /* Page Numbers */
@@ -312,7 +336,13 @@ a {
   font-weight: 900;
   font-size: 32px;
   padding: 0;
-  margin : 0 0 20px 35px;
+  margin :20px 35px;
+}
+
+@media only screen and (max-width: 600px) {
+  .page-no {
+    font-size: 22px;
+  }
 }
 
 /*  Update colors */
@@ -327,10 +357,11 @@ a {
 }
 
 #home .content {
-  background-image: url('../img/overlay3.png');
+  background-image: url('../img/overlay2.png');
   background-repeat: no-repeat;
   display: inline-block;
-  margin-right: 1%;
+  padding: 20px;
+  margin: auto 1%;
   max-width: 95%;
   padding: 6em;
   position: relative;
@@ -339,32 +370,85 @@ a {
   z-index: 1;
 }
 
-#home .content header {
+#home header {
   display: inline-block;
   vertical-align: middle;
-}
-
-#home .content header h2 {
-  padding-top: 30px;
-}
-
-#home .content header p {
-  font-size: 12px;
-  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
-#home .content .home-image {
+#home h1 {
+  font-size: 4em;
+  padding-top: 15px;
+  letter-spacing: 1px;
+}
+
+#home header p {
+  padding-top: 28px;
+  letter-spacing: 2px;
+}
+
+#home .home-image {
   display: inline-block;
   width: 300px;
   margin-left: 3em;
   vertical-align: middle;
 }
 
-#home .content .home-image img {
+#home .home-image img {
   display: block;
   width: 100%;
 }
+
+@media only screen and (max-width: 680px) {
+  #home {
+    background-image: url('../img/overlay1.png');
+    background-repeat: no-repeat;
+  }
+
+  #home .content {
+    background-image: none;
+    max-width: 90%;
+  }
+
+  #home h1 {
+  font-size: 2.5em;
+  }
+
+  #home .home-image {
+    width: 200px;
+    margin-left: 2em;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  #home .content {
+    max-width: 80%;
+    padding: 50px;
+  }
+
+  #home h1 {
+  font-size: 2em;
+  }
+
+  #home .home-image {
+    width: 180px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  #home .content {
+    max-width: 70%;
+  }
+
+  #home h1 {
+  font-size: 1.5em;
+  }
+
+  #home .home-image {
+    width: 150px;
+  }
+}
+
 
 /* Section home styles - END */
 
