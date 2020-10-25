@@ -148,26 +148,26 @@ var app = new Vue({
     slides: [
       {
         title: 'HyperX portfolio website',
-        description: 'Lorem ipsum dolor sit amet, consectetur',
+        description: 'Portfolio website custom tailored to a tech startup.',
         miniTitle: 'Technologies :',
         technology: 'html, bootstrap, jquery, php',
-        image: 'https://unsplash.it/700?image=10',
+        image: '../img/work1.png',
         color: '#e66767'
       },
       {
-        title: 'Photography website',
-        description: 'Lorem ipsum dolor sit amet, consectetur',
+        title: 'YMBA Kolonnawa',
+        description: 'Re-designing the website implemented for Young Mens Buddhist Association based in Kolonnawa',
         miniTitle: 'Technologies :',
-        technology: 'html, bootstrap, jquery, php',
-        image: '../img/1.png',
+        technology: 'html, bootstrap, jquery',
+        image: '../img/work2.png',
         color: '#353b48'
       },
       {
-        title: 'Ongoing project',
-        description: 'Lorem ipsum dolor sit amet, consectetur',
+        title: 'Diyon Photography',
+        description: 'Minimal photography website created as per clients request',
         miniTitle: 'Technologies :',
         technology: 'html, bootstrap, jquery, php',
-        image: 'https://unsplash.it/700?image=10',
+        image: '../img/work3.png',
         color: '#e66767'
       }
     ]
