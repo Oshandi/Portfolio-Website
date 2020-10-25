@@ -26,6 +26,13 @@ body {
   overflow: hidden;
 }
 
+@media only screen and (max-width: 600px) {
+  .fullpage {
+    height: 100%
+    overflow:auto;
+  }
+}
+
 .main-container {
   height:100vh;
   width: 100vw;
@@ -43,7 +50,6 @@ a {
   font-family: 'Playfair Display', serif;
   text-decoration: none;
   font-weight: 600;
-  padding: 5px 10px;
   color: #e3e3e3;
 }
 
@@ -455,132 +461,90 @@ a {
 /* Section about styles */
 #about {
   background-color: #000;
-  color: #e3e3e3;
+  display: flex;
 }
 
-#about .content {
-  background-image: url('../img/overlay2.png');
-  background-repeat: no-repeat;
+#about .info {
+  max-width: 50%;
+  align-self: center;
+  margin: 0 auto;
+  padding: 5%;
+}
+
+#about .info span {
   display: inline-block;
-  margin: 1% auto;
-  width: 100%;
-  padding: 6em;
-  position: relative;
-  text-align: center;
-  vertical-align: middle;
-}
-
-#about h1 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-}
-
-#about .statement {
-  margin: 0 5% 0 10%;
-  width: 30%;
-  color:#000;
-  font-family: 'Fira Code', monospace;
-  font-weight: 200;
-}
-
-#about .card-img-top {
-  max-height: 350px;
-}
-
-#about .card-body {
-  background: #c3c3c3;
-}
-
-#about .btn-primary {
-  background: #e66767;
-  border-radius: 0;
-  border: none;
-  text-transform: capitalize;
-  font-size: 14px;
-  letter-spacing: 1.5px;
-}
-
-#about .background {
-  margin: 0 10% 0 5%;
-  width: 40%;
-}
-
-#timeline-content {
-  text-align: center;
-}
-
-.timeline {
-  border-left: 4px solid #e3e3e3;
-  background: #e66767;
-  color: #e3e3e3;
-  margin: 50px auto;
-  letter-spacing: 0.5px;
-  position: relative;
-  line-height: 1.4em;
-  font-size: 1.03em;
-  padding: 50px;
-  list-style: none;
-  text-align: left;
-  max-width: 100%;
-}
-
-.timeline h2,
-.timeline h3 {
-  color: #000;
-  font-size: 20px;
-  font-family: 'Fira Code', monospace;
-  font-weight: 500;
-}
-
-.timeline p {
-  letter-spacing: 1px;
-  font-size: 14px;
-  font-family: 'Fira Code', monospace;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-.timeline .event {
-  border-bottom: 1px solid  #c3c3c3;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.timeline .event:last-of-type {
-  padding-bottom: 0;
-  margin-bottom: 0;
-  border: none;
-}
-
-.timeline .event:before,
-.timeline .event:after {
-  position: absolute;
-  display: block;
-  top: 0;
-}
-
-.timeline .event:before {
-  left: -217.5px;
-  content: attr(data-date);
+  font-size: 4em;
   color: #c3c3c3;
-  text-align: right;
-  font-weight: 100;
-  font-size: 0.9em;
-  width: 120px;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.25vw;
+  line-height: 4vw;
 }
 
-.timeline .event:after {
-  box-shadow: 0 0 0 4px #e3e3e3;
-  left: -57.85px;
+#about .info span:last-child {
+  font-size: 1.2em;
+}
+
+#about .info span .highlight {
+  font-size: 1.2em;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #e66767;
+}
+
+#about .info span h5 {
+  font-size: 0.8em;
+  margin-bottom: 2em;
+  font-family: 'Raleway', sans-serif;
+  text-transform: none;
+  line-height: 1.5em;
+}
+
+#about .info span a {
+  font-size: 0.8em;
+  padding: 12px;
+  letter-spacing: 0.15vw;
+  text-decoration: none;
+  color: #e3e3e3;
   background: #e66767;
-  border-radius: 50%;
-  height: 11px;
-  width: 11px;
-  content: "";
-  top: 5px;
 }
 
+@media only screen and (max-width: 900px) {
+  #about .info {
+    max-width: 60%;
+  }
+
+  #about .info span{
+    font-size: 3em;
+    line-height: 7vw;
+  }
+
+  #about .info span:last-child {
+    font-size: 1em;
+  }
+
+  #about .info span .highlight {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  #about .info {
+    max-width: 80%;
+  }
+
+  #about .info span{
+    font-size: 2em;
+    line-height: 9vw;
+  }
+
+  #about .info span a {
+    font-size: 0.7em;
+    padding: 10px;
+  }
+
+}
 
 /* Section about styles - END */
 
@@ -739,25 +703,26 @@ a {
 #slider .centered {
   margin: 0 auto;
   width: 50%;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
 }
 
 #slider h2 {
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 24px;
   letter-spacing: 1px;
-  font-weight: 500;
+  font-family: 'Playfair Display', serif;
 }
 
 #slider h3 {
   padding-top: 0.5em;
   font-size: 18px;
-  font-weight: 400;
 }
 
 #slider h5 {
   font-weight: 500;
   font-size: 14px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
