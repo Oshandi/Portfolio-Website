@@ -499,7 +499,7 @@ a {
 #about .info span h5 {
   font-size: 0.8em;
   margin-bottom: 2em;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Laila', serif;
   text-transform: none;
   line-height: 1.5em;
 }
@@ -706,7 +706,7 @@ a {
 #slider .centered {
   margin: 0 auto;
   width: 50%;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Laila', serif;
   font-weight: 400;
   letter-spacing: 0.15vw;
 }
@@ -885,7 +885,7 @@ a {
 }
 
 #contact .info .text p {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Laila', serif;
   font-weight: 400;
   font-size: 1em;
 }
