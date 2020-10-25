@@ -160,7 +160,7 @@ var app = new Vue({
         miniTitle: 'Technologies :',
         technology: 'html, bootstrap, jquery, php',
         image: '../img/1.png',
-        color: '#000'
+        color: '#353b48'
       },
       {
         title: 'Ongoing project',
