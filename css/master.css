@@ -387,12 +387,12 @@ a {
 #home h1 {
   font-size: 4em;
   padding-top: 15px;
-  letter-spacing: 1px;
+  letter-spacing: 0.25vw;
 }
 
 #home header p {
   padding-top: 28px;
-  letter-spacing: 2px;
+  letter-spacing: 0.15vw;
 }
 
 #home .home-image {
@@ -568,11 +568,13 @@ a {
 
 .heading-s3 h1 {
   color:#e3e3e3;
+  text-transform: uppercase;
+  letter-spacing: 0.25vw;
 }
 
 @media only screen and (max-width: 992px) {
   .heading-container-s3 {
-  display: none;
+    display: none;
   }
 }
 
@@ -705,12 +707,12 @@ a {
   width: 50%;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
+  letter-spacing: 0.15vw;
 }
 
 #slider h2 {
   text-transform: capitalize;
   font-size: 24px;
-  letter-spacing: 1px;
   font-family: 'Playfair Display', serif;
 }
 
@@ -722,7 +724,6 @@ a {
 #slider h5 {
   font-weight: 500;
   font-size: 14px;
-  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
