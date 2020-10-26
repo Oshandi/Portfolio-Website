@@ -145,6 +145,7 @@ var app = new Vue({
     touchStartY: 0,
     activeColor:'',
     activeSlide: 0,
+    activeTitle:'home',
     slides: [
       {
         title: 'HyperX portfolio website',
@@ -297,23 +298,27 @@ var app = new Vue({
     updateColors: function () {
       if ((this.activeSection == '0') || (this.activeSection == '2')) {
         this.activeColor = '#000';
+        if (this.activeSection == '0') {
+          this.activeTitle = 'home';
+        }
+        else if (this.activeSection == '2'){
+          this.activeTitle = 'works';
+        }
       }else if ((this.activeSection == '1') || (this.activeSection == '3')) {
         this.activeColor = '#e3e3e3';
+        if (this.activeSection == '1'){
+          this.activeTitle = 'about';
+        }
+        else if (this.activeSection == '3'){
+          this.activeTitle = 'contact';
+        }
       }
     },
 
-    test: function () {
-      console.log('booooo');
-      if (document.getElementById('about').outerHTML) {
-        console.log('fuckkkk');
-        this.activeColor = '#e3e3e3';
-      }
-    },
   },
   //methods to be called on DOM creation
   created() {
     this.calculateSectionOffsets();
-    this.updateColors();
 
     window.addEventListener('DOMMouseScroll', this.handleMouseWheelDOM);  // Mozilla Firefox
     window.addEventListener('mousewheel', this.handleMouseWheel, { passive: false }); // Other browsers
