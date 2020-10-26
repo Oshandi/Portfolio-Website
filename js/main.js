@@ -301,14 +301,19 @@ var app = new Vue({
         this.activeColor = '#e3e3e3';
       }
     },
-    /*
-    test: function () {
 
-    }, */
+    test: function () {
+      console.log('booooo');
+      if (document.getElementById('about').outerHTML) {
+        console.log('fuckkkk');
+        this.activeColor = '#e3e3e3';
+      }
+    },
   },
   //methods to be called on DOM creation
   created() {
     this.calculateSectionOffsets();
+    this.updateColors();
 
     window.addEventListener('DOMMouseScroll', this.handleMouseWheelDOM);  // Mozilla Firefox
     window.addEventListener('mousewheel', this.handleMouseWheel, { passive: false }); // Other browsers
@@ -317,7 +322,6 @@ var app = new Vue({
     window.addEventListener('touchmove', this.touchMove, { passive: false }); // mobile devices
   },
   mounted() {
-
   },
   destroyed() {
     window.removeEventListener('DOMMouseScroll', this.handleMouseWheelDOM); // Mozilla Firefox
