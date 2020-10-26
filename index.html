@@ -39,14 +39,15 @@
       <div class="topmenu">
         <div class="hamburger"
         v-bind:class="{open: isMobileMenuOpen}"
-        v-on:click="showMobileMenu()">
+        v-on:click="showMobileMenu() = !showMobileMenu()">
           <span v-bind:style="{background: activeColor}"></span>
           <span v-bind:style="{background: activeColor}"></span>
           <span v-bind:style="{background: activeColor}"></span>
         </div>
       </div>  <!-- .topmenu -->
 
-      <div class="menu-overlay" v-bind:class="{open: isMobileMenuOpen}">
+      <div class="menu-overlay" v-bind:class="{open: isMobileMenuOpen}"
+      v-on:click="showMobileMenu() = !showMobileMenu()">
         <ul class="nav">
           <li><a href="#home" @click.prevent="scrollToSection(0)">
             Home
