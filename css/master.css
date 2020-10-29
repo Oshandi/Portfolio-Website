@@ -138,10 +138,10 @@ a {
   opacity: 0;
   visibility: hidden;
   z-index: 900;
-  -webkit-transition: visibility 1s ease, opacity 1s ease;
-  -moz-transition: visibility 1s ease, opacity 1s ease;
-  -o-transition: visibility 1s ease, opacity 1s ease;
-  transition: visibility 1s ease, opacity 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .menu-overlay.open {
@@ -162,15 +162,6 @@ a {
 
 .nav li {
   margin: 20px auto;
-  opacity: 0;
-  overflow: hidden;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-
-.open .nav li {
-  opacity: 1;
 }
 
 .open .nav li a {
@@ -179,11 +170,6 @@ a {
   font-size: 32px;
   color: #e3e3e3;
   text-decoration: none;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 
 @media only screen and (max-width: 600px) {
