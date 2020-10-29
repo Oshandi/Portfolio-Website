@@ -146,6 +146,7 @@ var app = new Vue({
     activeColor:'',
     activeSlide: 0,
     activeTitle:'home',
+    pageLoading: true,
     slides: [
       {
         title: 'HyperX portfolio website',
@@ -198,6 +199,13 @@ var app = new Vue({
       }
   },
   methods: {
+    //Preloader
+    customPreloader () {
+      //Waste 5 seconds
+      setTimeout(() => {
+         this.pageLoading = false;
+      }, 1000)
+    },
     //portfolio slider - display next project slide
     nextSlide () {
       if (this.activeSlide >= this.slides.length - 1) {
@@ -327,6 +335,7 @@ var app = new Vue({
     window.addEventListener('touchmove', this.touchMove, { passive: false }); // mobile devices
   },
   mounted() {
+    this.customPreloader();
   },
   destroyed() {
     window.removeEventListener('DOMMouseScroll', this.handleMouseWheelDOM); // Mozilla Firefox

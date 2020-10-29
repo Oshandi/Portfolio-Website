@@ -18,6 +18,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="http://unpkg.com/portal-vue"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
     <script src="/js/anime.min.js"></script>
 
     <title>Piyumi Dissanayake</title>
@@ -25,7 +26,22 @@
 
   <body>
 
-  <div id="app">
+  <div id="app" class=" "
+  v-bind:class="{loaded: !pageLoading}">
+
+    <div class="loading">
+      <div class="loader">
+        <div class="square" ></div>
+        <div class="square"></div>
+        <div class="square last"></div>
+        <div class="square clear"></div>
+        <div class="square"></div>
+        <div class="square last"></div>
+        <div class="square clear"></div>
+        <div class="square "></div>
+        <div class="square last"></div>
+      </div>
+    </div>
 
     <header id="header" class="header">
 
@@ -123,7 +139,6 @@
 
         </span>
       </div> <!-- title -->
-
 
     </section> <!-- section about -->
 
