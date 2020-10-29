@@ -204,7 +204,7 @@ var app = new Vue({
       //Waste 5 seconds
       setTimeout(() => {
          this.pageLoading = false;
-      }, 1000)
+      }, 200)
     },
     //portfolio slider - display next project slide
     nextSlide () {
