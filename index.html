@@ -20,7 +20,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 
     <script src="/js/anime.min.js"></script>
-    <script src="/js/preloader.js"></script>
 
     <title>Piyumi Dissanayake</title>
   </head>
@@ -44,6 +43,8 @@
       </div>
     </div>
 
+    <div id="customCursor"></div>
+
     <header id="header" class="header">
 
       <div class="brand-container">
@@ -66,16 +67,16 @@
       <div class="menu-overlay" v-bind:class="{open: isMobileMenuOpen}"
       v-on:click="showMobileMenu() = !showMobileMenu()">
         <ul class="nav">
-          <li><a href="#home" @click.prevent="scrollToSection(0)">
+          <li class="cursor-text"><a href="#home" @click.prevent="scrollToSection(0)">
             Home
           </a></li>
-          <li><a href="#about" @click.prevent="scrollToSection(1)">
+          <li class="cursor-text"><a href="#about" @click.prevent="scrollToSection(1)">
             About
           </a></li>
-          <li><a href="#work" @click.prevent="scrollToSection(2)">
+          <li class="cursor-text"><a href="#work" @click.prevent="scrollToSection(2)">
             Works
           </a></li>
-          <li><a href="#contact" @click.prevent="scrollToSection(3)">
+          <li class="cursor-text"><a href="#contact" @click.prevent="scrollToSection(3)">
             Contact
           </a></li>
         </ul>  <!-- .nav -->
@@ -114,10 +115,10 @@
     <div class="container">
       <div class="row content">
         <header class="col-6-lg col-12-md">
-            <p>Hello, I'm</p>
-            <h1>PIYUMI</h1>
-            <h1>DISSANAYAKE</h1>
-            <p>Software & Web Developer</p>
+            <p class="cursor-text">Hello, I'm</p>
+            <h1 class="cursor-text">PIYUMI</h1>
+            <h1 class="cursor-text">DISSANAYAKE</h1>
+            <p class="cursor-text">Software & Web Developer</p>
         </header>
         <span class="home-image col-6-lg col-12-md"><img src="img/1.png" alt="" /></span>
       </div>
@@ -127,7 +128,7 @@
     <section id="about" ref="about" class="fullpage"> <!-- ABOUT -->
 
       <div class="info">
-        <span>About Me</span>
+        <span class="cursor-text">About Me</span>
         <span>Software and <h4 class="highlight">Web Developer</h4>
 
 
@@ -193,7 +194,7 @@
 
       <div class="heading-container-s3"> <!-- Section Title -->
         <div class="heading-s3">
-          <h1>Projects</h1>
+          <h1 class="cursor-text">Projects</h1>
         </div> <!-- .heading-s3 -->
       </div> <!-- .heading-container-s3 -->
 
@@ -202,8 +203,8 @@
     <section id="contact" ref="contact" class="fullpage">
       <div class="info">
         <div class="text">
-          <h1>Get in touch</h1>
-          <p>piyumioshandi@gmail.com</p>
+          <h1 class="cursor-text">Get in touch</h1>
+          <p >piyumioshandi@gmail.com</p>
         </div>
 
         <ul>
